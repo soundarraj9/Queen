@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUEEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="png " href="img/svs/Queenicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"  />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>   
+
+
+    <style>
+      /* login */
+
+      #logins{
+         background-image: url('img/bg3.jpg');
+         height: 100vh;
+         width: 100%;
+         background-size: cover;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     
+     }
+     
+       .main {
+       position: relative;
+       display: flex;
+       flex-direction: column;
+       background-color: #240046;
+       max-height: 500px;
+       overflow: hidden;
+       border-radius: 12px;
+       width: 380px;
+       box-shadow: 7px 7px 10px 3px #24004628;
+     }
+     
+     .form {
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
+       padding: 24px;
+     }
+     
+     /*checkbox to switch from sign up to login*/
+     #chk {
+       display: none;
+     }
+     
+     /*Login*/
+     .login {
+       position: relative;
+       width: 100%;
+       height: 100%;
+     }
+     
+     .login label {
+       margin: 25% 0 5%;
+     }
+     
+     label {
+       color: #fff;
+       font-size: 2rem;
+       justify-content: center;
+       display: flex;
+       font-weight: bold;
+       cursor: pointer;
+       transition: .5s ease-in-out;
+       
+     }
+     
+     .input {
+       width: 100%;
+       height: 40px;
+       /* background: #e0dede; */
+       background-color: #fff;
+       padding: 10px;
+       border: 1px solid #cce7d0;
+       outline: none;
+       border-radius: 4px;
+     }
+     
+     /*Register*/
+     .register {
+       /* background: #eee; */
+       background-color: #fff;
+       border-radius: 60% / 10%;
+       transform: translateY(5%);
+       transition: .8s ease-in-out;
+     }
+     
+     .register label {
+       color: #573b8a;
+       transform: scale(.6);
+     }
+     
+     #chk:checked ~ .register {
+       transform: translateY(-60%);
+     }
+     
+     #chk:checked ~ .register label {
+       transform: scale(1);
+       margin: 10% 0 5%;
+     }
+     
+     #chk:checked ~ .login label {
+       transform: scale(.6);
+       margin: 5% 0 5%;
+     }   
+     /*Button*/
+     .form button {
+       width: 85%;
+       height: 40px;
+       margin: 12px auto 10%;
+       color: #fff;
+       background: #573b8a;
+       font-size: 1rem;
+       font-weight: bold;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+       transition: .2s ease-in;
+     }
+     
+     .form button:hover {
+       background-color: #6d44b8;
+     }
+     
+     @media (max-width: 477px){
+      
+      .main {
+        width: 340px;
+        margin-left: 2%;
+      }
+     
+     }
+     
+    </style>
+
+
+</head>
+<body>
+       
+  
+
+        <section id="header">
+            <a href="#"><img src="img/THEQUEEN2.png " class="logo" alt=""></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop1.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="active"><a id='lg-bag' href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    <li><a id='lg-bag'href="shop1.html"><i class="fa fa-light fa-bag-shopping"  id="cart-icon"></i></a></li>
+                    <a href="#" id="close"><i class="fa fa-times"></i></a>
+                </ul>
+            </div>
+            <form action="" class="search-form">
+                <input type="search" placeholder="search here....." id="search-box">
+                <label for="search-box" class="fa fa-search"></label>
+            </form>
+         
+            <div class="dot">      
+            </div>
+
+            <div id="mobile">
+                <div class="active"><a href="#"><i class="fa fa-search"></i></a></div>
+                <a href="#"><i class="fa fa-light fa-bag-shopping"  id="cart-icon"></i></a>
+                <i id="bar" class="fa fa-bars"></i>
+            </div>
+        </section>
+
+        <!-- <section id="page-header" class="cart">
+        <h2>#CART</h2>
+        <h3>"Elegance never goes out of style"</h3>
+        </section> -->
+
+   <!-- <section id="logins" class="section-p1">    
+    <form class="form">
+        <img src="img/man2.jpeg" alt="">
+        <p class="form-title">Sign in to your account</p>
+         <div class="input-container">
+           <input placeholder="Enter email" type="email">
+           <span>
+             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+             </svg>
+           </span>
+       </div>
+       <div class="input-container">
+           <input placeholder="Enter password" type="password">
+ 
+           <span>
+             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+               <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+             </svg>
+           </span>
+         </div>
+          <button class="submit" type="submit">
+         Sign in
+       </button>
+ 
+       <p class="signup-link">
+         No account?
+         <a href="">Sign up</a>
+       </p>
+    </form>
+</section>  -->
+
+
+        <section id="logins" >
+            <div class="main">  	
+                <input type="checkbox" id="chk" aria-hidden="true">
+            
+                    <div class="login">
+                        <form action="https://formsubmit.co/vinayagarvps4059@gmail.com" method="POST" class="form">
+                            <label for="chk" aria-hidden="true">Log in</label>
+                            <input class="input" type="email" name="email" placeholder="Email" required>
+                            <input class="input" type="password" name="Password" placeholder="Password" required>
+                            <input type="hidden" name="_captcha" value="false">
+                            <button type="submit">Log in</button>
+                        </form>
+                    </div>
+            
+              <div class="register">
+                        <form action="https://formsubmit.co/vinayagarvps4059@gmail.com" method="POST" class="form">
+                            <label for="chk" aria-hidden="true">Register</label>
+                            <input class="input" type="text" name="Username" placeholder="Username" required>
+                            <input class="input" type="email" name="email" placeholder="Email" required>
+                            <input class="input" type="password" name="Password" placeholder="Password" required>
+                            <input type="hidden" name="_captcha" value="false">
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+            </div>
+        </section>
+
+
+        <footer class="section-p1">
+            <div class="col">
+                <img src="img/THEQUEEN2.png" alt="" class="logo" >
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> Elampillai,Salem,Tamil Nadu</p>
+                <p><strong>phone:</strong> (+91) 63808 05720 / (+91) 98420 69063</p>
+                <p><strong>Hours:</strong> 24 x 7</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a class="active" href="login.html">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+
+            <div class="colinstall">
+                <h4>Install App</h4>
+                <p>From Google Play or App Store </p>
+                <img src="img/logos1.png" alt="">
+                <p>Secured Payment Gateways</p>
+                <img src="img/logos2.png" alt="">
+            </div>
+
+            <div class="copyright">
+                <p>© Copyright 2023. THE QUEEN SAREES HTML CSS.</p>
+            </div>
+        </footer>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
